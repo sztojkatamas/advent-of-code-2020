@@ -16,21 +16,6 @@ repositories {
     jcenter()
 }
 
-dependencies {
-    //implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
-//    implementation("com.google.guava:guava:28.1-jre")
-
-    // Use the Kotlin JDK 8 standard library.
-    //implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-
-//    testImplementation("org.jetbrains.kotlin:kotlin-test")
-//    testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
-}
-
-//application {
-//    mainClassName = "hu.advent.of.code.ApplicationKt"
-//}
-
 kotlin {
     val hostOs = System.getProperty("os.name")
     val isMingwX64 = hostOs.startsWith("Windows")

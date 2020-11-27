@@ -1,21 +1,27 @@
 package hu.advent.of.code
 
-import platform.posix.fopen
+import kotlinx.cinterop.*
+import platform.posix.*
 
-open class BaseChallenge:Challenge {
+abstract class BaseChallenge:Challenge {
 
     lateinit var data:List<String>
 
-    override fun run() {}
-
     fun loadDataFromFile(filename: String) {
 
-        val file = fopen(filename, "r")
+        val file = fopen(filename, "rt")
         if (file == null) {
             println("Cannot open file $filename")
             return
         }
-
-        //data = File(Resources.getResource(filename).toURI()).readLines()
+        val pagesize = 2048
+        memScoped {
+            val sb = StringBuilder()
+            val buffer = allocArray<ByteVar>(pagesize)
+            while (fgets(buffer, pagesize, file) != null) {
+                sb.append(buffer.toKString())
+            }
+            data = sb.split("\n")
+        }
     }
 }

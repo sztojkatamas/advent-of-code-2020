@@ -6,5 +6,6 @@ class Puzzle1A: BaseChallenge() {
 
     override fun run() {
         loadDataFromFile("data1.txt")
+        println("File has ${data.size} lines")
     }
 }

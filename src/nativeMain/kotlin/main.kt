@@ -1,6 +1,6 @@
 import hu.advent.of.code.Application
 
-fun main(args: Array<String>) {
+fun main() {
 
     val application = Application()
     application.start()
