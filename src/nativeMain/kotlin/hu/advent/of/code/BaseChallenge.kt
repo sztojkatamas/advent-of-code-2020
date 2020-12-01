@@ -1,27 +1,42 @@
 package hu.advent.of.code
 
-import kotlinx.cinterop.*
-import platform.posix.*
+import kotlinx.cinterop.ByteVar
+import kotlinx.cinterop.allocArray
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.toKString
+import platform.posix.fgets
+import platform.posix.fopen
 
 abstract class BaseChallenge:Challenge {
 
-    lateinit var data:List<String>
+    fun loadIntDataFromFile(filename: String) : List<Int> {
+        val intData = mutableListOf<Int>()
+        memScoped {
+            val stringData = loadStringDataFromFile(filename)
+            for (str in stringData) {
+                intData.add(str.toInt())
+            }
+        }
+        return intData
+    }
 
-    fun loadDataFromFile(filename: String) {
+    fun loadStringDataFromFile(filename: String) : List<String> {
 
+        val data = mutableListOf<String>()
         val file = fopen(filename, "rt")
         if (file == null) {
             println("Cannot open file $filename")
-            return
         }
-        val pagesize = 2048
+
+        val pageSize = 2048
         memScoped {
             val sb = StringBuilder()
-            val buffer = allocArray<ByteVar>(pagesize)
-            while (fgets(buffer, pagesize, file) != null) {
+            val buffer = allocArray<ByteVar>(pageSize)
+            while (fgets(buffer, pageSize, file) != null) {
                 sb.append(buffer.toKString())
             }
-            data = sb.split("\n")
+            data += sb.split("\n")
         }
+        return data
     }
 }
