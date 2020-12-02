@@ -1,16 +1,6 @@
 plugins {
-    
-    //id("org.jetbrains.kotlin.jvm") version "1.4.20"
     kotlin("multiplatform") version "1.4.20"
-    //application
 }
-
-/*
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(14))
-    }
-}*/
 
 repositories {
     jcenter()
