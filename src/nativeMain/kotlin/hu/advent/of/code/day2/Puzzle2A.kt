@@ -14,7 +14,7 @@ class Puzzle2A: BaseChallenge() {
     }
 }
 
-class PasswordPolicy(var input:String) {
+class PasswordPolicy(private var input:String) {
 
     private var min = 0
     private var max = 0

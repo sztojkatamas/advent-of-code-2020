@@ -4,8 +4,10 @@ import kotlinx.cinterop.ByteVar
 import kotlinx.cinterop.allocArray
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.toKString
+import platform.posix.fclose
 import platform.posix.fgets
 import platform.posix.fopen
+import platform.posix.fputs
 
 abstract class BaseChallenge:Challenge {
 
@@ -37,6 +39,20 @@ abstract class BaseChallenge:Challenge {
             }
             data += sb.split("\n")
         }
+        fclose(file)
         return data
     }
+
+    fun writeStringDataToFile(filename: String, data: List<String>) {
+        val file = fopen(filename, "wt")
+        if (file == null) {
+            println("Cannot create file $filename")
+        }
+        for (x in data) {
+            fputs(x+"\n", file)
+        }
+
+        fclose(file)
+    }
+
 }

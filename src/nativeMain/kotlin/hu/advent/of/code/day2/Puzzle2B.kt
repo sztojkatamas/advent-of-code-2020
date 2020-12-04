@@ -14,7 +14,7 @@ class Puzzle2B: BaseChallenge() {
     }
 }
 
-class PasswordPolicyAdvanced(var input:String) {
+class PasswordPolicyAdvanced(private var input:String) {
 
     private var min = 0
     private var max = 0
@@ -37,6 +37,6 @@ class PasswordPolicyAdvanced(var input:String) {
     }
 
     fun isvalid() : Boolean {
-        return (password[max-1].toString().equals(character) xor password[min-1].toString().equals(character))
+        return (password[max-1].toString().equals(character) xor (password[min - 1].toString() == character))
     }
 }
