@@ -3,7 +3,7 @@ package hu.advent.of.code.day5
 import hu.advent.of.code.BaseChallenge
 
 class Puzzle5B : BaseChallenge() {
-    var seats = mutableListOf<String>()
+    private var seats = mutableListOf<String>()
 
     override fun run() {
 
@@ -12,14 +12,8 @@ class Puzzle5B : BaseChallenge() {
         }
 
         val data = loadStringDataFromFile("data/data5.txt")
-        var max = 0
-        for (line in data) {
-            val current = calculateRow(line)
-            if (current > max) {
-                max = current
-            }
-        }
-        println("Max ID number is: $max")
+
+        data.forEach { calculateRow(it) }
 
         for (i in seats.indices) {
             if (i>2 && seats[i].toCharArray().contains(' ')) {

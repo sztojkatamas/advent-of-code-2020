@@ -3,7 +3,7 @@ package hu.advent.of.code.day3
 object Maputils {
 
     fun expandMap(map:List<String>, factor :Int) : MutableList<String> {
-        var retMap = mutableListOf<String>()
+        val retMap = mutableListOf<String>()
         for (i in map) {
             var expandedline = ""
             for (x in 1..factor) {

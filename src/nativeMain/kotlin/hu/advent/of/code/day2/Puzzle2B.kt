@@ -37,6 +37,6 @@ class PasswordPolicyAdvanced(private var input:String) {
     }
 
     fun isvalid() : Boolean {
-        return (password[max-1].toString().equals(character) xor (password[min - 1].toString() == character))
+        return ((password[max - 1].toString() == character) xor (password[min - 1].toString() == character))
     }
 }

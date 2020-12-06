@@ -11,7 +11,7 @@ class Passport {
 
         for (i in line.trim().split(" ")) {
             val pairs = i.split(":")
-            properties.put(pairs[0], pairs[1])
+            properties[pairs[0]] = pairs[1]
         }
         return true
     }
