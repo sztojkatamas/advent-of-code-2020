@@ -12,6 +12,10 @@ import hu.advent.of.code.day5.Puzzle5A
 import hu.advent.of.code.day5.Puzzle5B
 import hu.advent.of.code.day6.Puzzle6A
 import hu.advent.of.code.day6.Puzzle6B
+import hu.advent.of.code.day7.Puzzle7A
+import hu.advent.of.code.day7.Puzzle7B
+import hu.advent.of.code.day8.Puzzle8A
+import hu.advent.of.code.day8.Puzzle8B
 
 class Application {
     private val puzzle1a = Puzzle1A()
@@ -26,6 +30,10 @@ class Application {
     private val puzzle5b = Puzzle5B()
     private val puzzle6a = Puzzle6A()
     private val puzzle6b = Puzzle6B()
+    private val puzzle7a = Puzzle7A()
+    private val puzzle7b = Puzzle7B()
+    private val puzzle8a = Puzzle8A()
+    private val puzzle8b = Puzzle8B()
 
     fun start() {
 
@@ -64,6 +72,18 @@ class Application {
 
         println("\nDay 6 - Puzzle 2")
         puzzle6b.run()
+
+        println("\nDay 7 - Puzzle 1")
+        puzzle7a.run()
+
+        println("\nDay 7 - Puzzle 2")
+        puzzle7b.run()
+
+        println("\nDay 8 - Puzzle 1")
+        puzzle8a.run()
+
+        println("\nDay 8 - Puzzle 2")
+        puzzle8b.run()
 
     }
 }
