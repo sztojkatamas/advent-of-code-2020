@@ -6,7 +6,8 @@ class Puzzle8A : BaseChallenge() {
 
     private val executedLines = mutableSetOf<Int>()
 
-    override fun run() {
+    override fun run(): Boolean {
+        println("\nDay 8 - Puzzle 1")
         val data = loadStringDataFromFile("data/data8.txt")
         var currentLine = 0
         var accu = 0
@@ -27,5 +28,6 @@ class Puzzle8A : BaseChallenge() {
             }
         }
         println("ACCU: $accu")
+        return true
     }
 }

@@ -6,8 +6,8 @@ class Puzzle7A : BaseChallenge() {
     private val bags = mutableSetOf<Bag>()
     private val foundRules = mutableSetOf<String>()
 
-    override fun run() {
-
+    override fun run(): Boolean {
+        println("\nDay 7 - Puzzle 1")
         val data = loadStringDataFromFile("data/data7.txt")
 
         for (line in data) {
@@ -26,6 +26,7 @@ class Puzzle7A : BaseChallenge() {
 
         searchFor("shiny gold")
         println("Eventually ${foundRules.size} bag colors can contain at least one shiny gold bag.")
+        return true
     }
 
     private fun searchFor(str : String) {

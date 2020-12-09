@@ -6,7 +6,8 @@ class Puzzle8B : BaseChallenge() {
 
     private val executedLines = mutableSetOf<Int>()
 
-    override fun run() {
+    override fun run(): Boolean {
+        println("\nDay 8 - Puzzle 2")
         val data = loadStringDataFromFile("data/data8.txt")
         var occurence = 1
 
@@ -25,6 +26,7 @@ class Puzzle8B : BaseChallenge() {
             work = changeAToB(data, occurence, "nop", "jmp")
             occurence++
         }
+        return true
 
     }
 

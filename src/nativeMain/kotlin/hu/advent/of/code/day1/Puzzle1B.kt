@@ -4,7 +4,8 @@ import hu.advent.of.code.BaseChallenge
 
 class Puzzle1B: BaseChallenge() {
 
-    override fun run() {
+    override fun run(): Boolean {
+        println("\nDay 1 - Puzzle 2")
         val data = loadIntDataFromFile("data/data1.txt")
 
         for(A in data) {
@@ -15,11 +16,12 @@ class Puzzle1B: BaseChallenge() {
                         println("B: $B")
                         println("C: $C")
                         println("Answer: ${A * B * C}")
-                        return
+                        return true
                     }
                 }
             }
         }
+        return false
 
     }
 }

@@ -11,6 +11,17 @@ import platform.posix.fputs
 
 abstract class BaseChallenge:Challenge {
 
+    fun loadLongDataFromFile(filename: String): List<Long> {
+        val longData = mutableListOf<Long>()
+        memScoped {
+            val stringData = loadStringDataFromFile(filename)
+            for (str in stringData) {
+                longData.add(str.toLong())
+            }
+        }
+        return longData
+    }
+
     fun loadIntDataFromFile(filename: String) : List<Int> {
         val intData = mutableListOf<Int>()
         memScoped {
@@ -54,5 +65,7 @@ abstract class BaseChallenge:Challenge {
 
         fclose(file)
     }
+
+
 
 }

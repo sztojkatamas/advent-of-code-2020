@@ -4,8 +4,8 @@ import hu.advent.of.code.BaseChallenge
 
 class Puzzle5A: BaseChallenge() {
 
-    override fun run() {
-
+    override fun run(): Boolean {
+        println("\nDay 5 - Puzzle 1")
         val data = loadStringDataFromFile("data/data5.txt")
         var max = 0
         for (line in data) {
@@ -15,6 +15,7 @@ class Puzzle5A: BaseChallenge() {
             }
         }
         println("Max ID number is: $max")
+        return true
     }
 
     private fun calculateRow(str :String) : Int {

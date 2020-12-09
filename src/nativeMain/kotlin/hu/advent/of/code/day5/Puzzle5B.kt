@@ -5,8 +5,8 @@ import hu.advent.of.code.BaseChallenge
 class Puzzle5B : BaseChallenge() {
     private var seats = mutableListOf<String>()
 
-    override fun run() {
-
+    override fun run(): Boolean {
+        println("\nDay 5 - Puzzle 2")
         for (i in 0..127) {
             seats.add("        ")
         }
@@ -21,6 +21,7 @@ class Puzzle5B : BaseChallenge() {
                 break
             }
         }
+        return true
     }
 
     private fun createIntList(length: Int) : MutableList<Int> {

@@ -1,5 +1,5 @@
 package hu.advent.of.code
 
 interface Challenge {
-    fun run()
+    fun run() :Boolean
 }

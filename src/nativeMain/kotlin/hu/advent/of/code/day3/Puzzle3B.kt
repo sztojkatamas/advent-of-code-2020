@@ -4,8 +4,10 @@ import hu.advent.of.code.BaseChallenge
 
 class Puzzle3B: BaseChallenge() {
 
-    override fun run() {
+    override fun run(): Boolean {
+        println("\nDay 3 - Puzzle 2")
         println("${runSlope(1,1) * runSlope(3,1) * runSlope(5,1) * runSlope(7,1) * runSlope(1,2)}")
+        return true
     }
 
     private fun runSlope(xInc :Int, yInc :Int) : Long {

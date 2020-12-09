@@ -4,7 +4,8 @@ import hu.advent.of.code.BaseChallenge
 
 class Puzzle3A: BaseChallenge() {
 
-    override fun run() {
+    override fun run(): Boolean {
+        println("\nDay 3 - Puzzle 1")
         val data = Maputils.expandMap(loadStringDataFromFile("data/data3.txt"), 100)
         val position = Position(0,0)
         var treecounter = 0
@@ -18,6 +19,7 @@ class Puzzle3A: BaseChallenge() {
         }
 
         println("Hit $treecounter trees")
+        return true
     }
 
 }

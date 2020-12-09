@@ -5,12 +5,14 @@ import kotlinx.cinterop.memScoped
 
 class Puzzle2B: BaseChallenge() {
 
-    override fun run() {
+    override fun run(): Boolean {
+        println("\nDay 2 - Puzzle 2")
         println("Number of valid passwords are: ${
             loadStringDataFromFile("data/data2.txt")
                     .filter { PasswordPolicyAdvanced(it).isvalid() }
                     .count()
         }")
+        return true
     }
 }
 

@@ -3,8 +3,8 @@ package hu.advent.of.code.day6
 import hu.advent.of.code.BaseChallenge
 
 class Puzzle6B : BaseChallenge() {
-    override fun run() {
-
+    override fun run(): Boolean {
+        println("\nDay 6 - Puzzle 2")
         val data = loadStringDataFromFile("data/data6.txt")
 
         val listOfGroups = mutableListOf<GroupOfPeople>()
@@ -19,5 +19,6 @@ class Puzzle6B : BaseChallenge() {
         }
 
         println("Sum of EVERYONE YES answers: ${listOfGroups.sumOf { it.getAllYesAnswers() }}")
+        return true
     }
 }
