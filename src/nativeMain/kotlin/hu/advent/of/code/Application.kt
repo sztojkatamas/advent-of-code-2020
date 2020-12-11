@@ -2,6 +2,8 @@ package hu.advent.of.code
 
 import hu.advent.of.code.day1.Puzzle1A
 import hu.advent.of.code.day1.Puzzle1B
+import hu.advent.of.code.day10.Puzzle10A
+import hu.advent.of.code.day10.Puzzle10B
 import hu.advent.of.code.day2.Puzzle2A
 import hu.advent.of.code.day2.Puzzle2B
 import hu.advent.of.code.day3.Puzzle3A
@@ -32,6 +34,7 @@ class Application {
      ,Puzzle7A() ,Puzzle7B()
      ,Puzzle8A() ,Puzzle8B()
      ,Puzzle9A() ,Puzzle9B()
+     ,Puzzle10A() ,Puzzle10B()
     )
 
     fun start() {
